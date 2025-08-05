@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homelab Wiki</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wiki-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">
+                    <i class="fas fa-server"></i>
+                    Homelab Wiki
+                </h1>
+            </div>
+            <div class="sidebar-content">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/infrastructure.html" class="nav-link">
+                            <i class="fas fa-cogs"></i>
+                            <span>Infrastructure</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/virtual-machines.html" class="nav-link">
+                            <i class="fas fa-laptop"></i>
+                            <span>Virtual Machines</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/network.html" class="nav-link">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Network</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/security.html" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/automation.html" class="nav-link">
+                            <i class="fas fa-robot"></i>
+                            <span>Automation</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/projects.html" class="nav-link">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Projects & Experiments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/troubleshooting.html" class="nav-link">
+                            <i class="fas fa-bug"></i>
+                            <span>Troubleshooting</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="breadcrumb">
+                    <span>Home</span>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Welcome to Your Homelab Wiki</h1>
+                        <p class="hero-description">
+                            Your comprehensive documentation hub for infrastructure, projects, and troubleshooting.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="quick-links">
+                    <h2>Quick Navigation</h2>
+                    <div class="cards-grid">
+                        <a href="pages/infrastructure.html" class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Infrastructure Overview</h3>
+                                <p>Complete overview of your homelab infrastructure including hardware and software components.</p>
+                            </div>
+                        </a>
+
+                        <a href="pages/virtual-machines.html" class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Virtual Machines</h3>
+                                <p>Documentation for all your virtual machines and their configurations.</p>
+                            </div>
+                        </a>
+
+                        <a href="pages/network.html" class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Network</h3>
+                                <p>Network topology, configurations, and management documentation.</p>
+                            </div>
+                        </a>
+
+                        <a href="pages/security.html" class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Security</h3>
+                                <p>Security policies, configurations, and best practices for your homelab.</p>
+                            </div>
+                        </a>
+
+                        <a href="pages/automation.html" class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Automation</h3>
+                                <p>Automation scripts, workflows, and deployment procedures.</p>
+                            </div>
+                        </a>
+
+                        <a href="pages/projects.html" class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Projects & Experiments</h3>
+                                <p>Current projects, experiments, and learning initiatives.</p>
+                            </div>
+                        </a>
+
+                        <a href="pages/troubleshooting.html" class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Troubleshooting</h3>
+                                <p>Common issues, solutions, and troubleshooting procedures.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="recent-updates">
+                    <h2>Recent Updates</h2>
+                    <div class="update-list">
+                        <div class="update-item">
+                            <div class="update-date">2024-01-15</div>
+                            <div class="update-content">
+                                <strong>Infrastructure Overview</strong> - Updated hardware specifications and network topology
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">2024-01-10</div>
+                            <div class="update-content">
+                                <strong>Troubleshooting</strong> - Added Immich server connectivity issue resolution
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+        </main>
+    </div>
+    <script>
+        // Sidebar toggle for mobile
+        document.getElementById('sidebarToggle').onclick = function() {
+            document.querySelector('.sidebar').classList.toggle('open');
+        };
+    </script>
+</body>
+</html> 
