@@ -122,17 +122,17 @@
                     <h3>Network Topology</h3>
                     <div class="mermaid">
                         graph TD
-                            Internet((Internet)) --> Router[pfSense Router]
-                            Router --> CoreSwitch[Core Switch]
-                            CoreSwitch --> Server1[Main Server]
-                            CoreSwitch --> Server2[Storage Server]
-                            CoreSwitch --> Server3[NUC]
-                            CoreSwitch --> AP1[Access Point 1]
-                            CoreSwitch --> AP2[Access Point 2]
-                            CoreSwitch --> RaspPi[Monitoring Pi]
-                            CoreSwitch --> HomeVLAN[Home VLAN]
-                            CoreSwitch --> IoTVLAN[IoT VLAN]
-                            CoreSwitch --> GuestVLAN[Guest VLAN]
+                            Internet((Internet)) --> WAN Router[Juniper]
+                            WAN Router --> LAN Router[Microtik]
+                            LAN Router --> RackSwitch[TP Link TL-SG1024]
+                            RackSwitch --> Server1[Poweredge R520]
+                            RackSwitch --> Server2[ZFS Storage]
+                            RackSwitch --> SmallSwitch[Netgear GS108]
+                            RackSwitch --> AP1[Netgear Nighthawk]
+                            RackSwitch --> Desktop[Desktop]
+                            SmallSwitch --> Console1[Xbox Series X]
+                            SmallSwitch --> Laptop[Laptop]
+                            SmallSwitch --> TV1[Philips TV]
                     </div>
 
                     <h3>Security Implementation</h3>
