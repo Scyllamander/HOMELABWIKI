@@ -106,7 +106,7 @@
                         <li><strong>Hypervisor:</strong> Proxmox VE for virtualization</li>
                         <li><strong>Containers:</strong> Docker with Portainer and Docker Compose</li>
                         <li><strong>Storage:</strong> Proxmox ZFS pools, NFS/SMB shares</li>
-                        <li><strong>Networking:</strong> Pi-hole for DNS/ad-blocking, pfSense firewall with IDS/IPS</li>
+                        <li><strong>Networking:</strong> Cloudflared for DNS and tunnels, pfSense firewall with IDS/IPS</li>
                     </ul>
 
                     <h3>Self-hosted Applications</h3>
@@ -114,9 +114,9 @@
                         <li><strong>Media:</strong> Plex, Jellyfin</li>
                         <li><strong>Home Automation:</strong> Home Assistant</li>
                         <li><strong>Monitoring:</strong> Grafana, Prometheus, InfluxDB</li>
-                        <li><strong>Documentation:</strong> Wiki.js</li>
-                        <li><strong>Password Management:</strong> Vaultwarden</li>
-                        <li><strong>Git Server:</strong> Gitea</li>
+                        <li><strong>Documentation:</strong> Obsidian</li>
+                        <li><strong>Password Management:</strong> Bitwarden</li>
+                        <li><strong>Git Server:</strong> Gitlab</li>
                     </ul>
 
                     <h3>Network Topology</h3>
@@ -137,15 +137,14 @@
                     <h3>Security Implementation</h3>
                     <ul>
                         <li><strong>Network Segmentation:</strong> Multiple VLANs for IoT, guest, and main networks</li>
-                        <li><strong>Intrusion Detection:</strong> Suricata IDS/IPS on pfSense</li>
-                        <li><strong>Traffic Monitoring:</strong> Netflow analysis with ELK stack</li>
-                        <li><strong>Access Control:</strong> Strong authentication with MFA where available</li>
+                        <li><strong>Intrusion Detection:</strong> Security Onion</li>
+                        <li><strong>Traffic Monitoring:</strong> Cloudflare & Secuirty Onion</li>
+                        <li><strong>Access Control:</strong> Keycloak</li>
                     </ul>
 
                     <h3>Backup Strategy</h3>
                     <ul>
-                        <li><strong>Local:</strong> Daily incremental backups to NAS</li>
-                        <li><strong>Offsite:</strong> Weekly backups to cloud storage (Backblaze B2)</li>
+                        <li><strong>Local:</strong> Weekly incremental backups to NAS</li>
                         <li><strong>Configuration:</strong> All network and server configs version controlled</li>
                         <li><strong>Recovery:</strong> Documented procedures for rebuilding services</li>
                     </ul>
@@ -155,6 +154,7 @@
                         <li>Redundant internet connection with automatic failover</li>
                         <li>Storage capacity expansion with additional drives</li>
                         <li>Network upgrade to 10Gbe for server interconnects</li>
+                        <li>Dedicated hardware for media playback</li>
                         <li>Dedicated hardware for machine learning projects</li>
                     </ul>
                 </div>
