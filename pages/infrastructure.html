@@ -121,19 +121,18 @@
 
                     <h3>Network Topology</h3>
                     <div class="mermaid">
-                        graph TD
-                            Internet((Internet)) --> WAN Router[Juniper]
-                            WAN Router --> LAN Router[Microtik]
-                            LAN Router --> RackSwitch[TP Link TL-SG1024]
-                            RackSwitch --> Server1[Poweredge R520]
-                            RackSwitch --> Server2[ZFS Storage]
-                            RackSwitch --> SmallSwitch[Netgear GS108]
-                            RackSwitch --> AP1[Netgear Nighthawk]
-                            RackSwitch --> Desktop[Desktop]
-                            SmallSwitch --> Console1[Xbox Series X]
-                            SmallSwitch --> Laptop[Laptop]
-                            SmallSwitch --> TV1[Philips TV]
-                    </div>
+                                            graph TD
+                                                Internet((Internet)) --> WANRouter[Microtik]
+                                                WAN Router --> LAN Router[MikroTik]
+                                                RackSwitch --> Server1[Poweredge R520]
+                                                RackSwitch --> Server2[ZFS Storage]
+                                                RackSwitch --> SmallSwitch[Netgear GS108]
+                                                RackSwitch --> AP1[Netgear Nighthawk]
+                                                RackSwitch --> Desktop[Desktop]
+                                                SmallSwitch --> Console1[Xbox Series X]
+                                                SmallSwitch --> Laptop[Laptop]
+                                                SmallSwitch --> TV1[Philips TV]
+                                        </div>
 
                     <h3>Security Implementation</h3>
                     <ul>
