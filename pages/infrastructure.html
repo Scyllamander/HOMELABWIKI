@@ -119,20 +119,20 @@
                         <li><strong>Git Server:</strong> Gitea</li>
                     </ul>
 
-                                        <h3>Network Topology</h3>
-                                        <div class="mermaid">
-                    graph TD
-                        Internet((Internet)) --> WANRouter[MikroTik]
-                        WAN Router --> LAN Router[MikroTik]
-                        RackSwitch --> Server1[Poweredge R520]
-                        RackSwitch --> Server2[ZFS Storage]
-                        RackSwitch --> SmallSwitch[Netgear GS108]
-                        RackSwitch --> AP1[Netgear Nighthawk]
-                        RackSwitch --> Desktop[Desktop]
-                        SmallSwitch --> Console1[Xbox Series X]
-                        SmallSwitch --> Laptop[Laptop]
-                        SmallSwitch --> TV1[Philips TV]
-                                        </div>
+                    <h3>Network Topology</h3>
+                    <div class="mermaid">
+                        graph TD
+                            Internet((Internet)) --> WANRouter[MikroTik Router]
+                            WANRouter --> RackSwitch[TP-Link TL-SG1024 Switch]
+                            RackSwitch --> Server1[PowerEdge R520]
+                            RackSwitch --> Server2[ZFS Storage]
+                            RackSwitch --> SmallSwitch[Netgear GS108]
+                            RackSwitch --> AP1[Netgear Nighthawk]
+                            RackSwitch --> Desktop[Desktop PC]
+                            SmallSwitch --> Console1[Xbox Series X]
+                            SmallSwitch --> Laptop[Laptop]
+                            SmallSwitch --> TV1[Philips TV]
+                    </div>
 
                     <h3>Security Implementation</h3>
                     <ul>
@@ -172,4 +172,4 @@
         };
     </script>
 </body>
-</html> 
+</html>
