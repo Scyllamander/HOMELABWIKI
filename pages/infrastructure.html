@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Overview - Homelab Wiki</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="wiki-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">
+                    <i class="fas fa-server"></i>
+                    Homelab Wiki
+                </h1>
+            </div>
+            <div class="sidebar-content">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="infrastructure.html" class="nav-link active">
+                            <i class="fas fa-cogs"></i>
+                            <span>Infrastructure</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="virtual-machines.html" class="nav-link">
+                            <i class="fas fa-laptop"></i>
+                            <span>Virtual Machines</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="network.html" class="nav-link">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Network</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="security.html" class="nav-link">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="automation.html" class="nav-link">
+                            <i class="fas fa-robot"></i>
+                            <span>Automation</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Projects & Experiments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="troubleshooting.html" class="nav-link">
+                            <i class="fas fa-bug"></i>
+                            <span>Troubleshooting</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> / Infrastructure Overview
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="page-content">
+                    <h1>Infrastructure Overview</h1>
+                    
+                    <h2>Homelab Infrastructure Overview</h2>
+                    
+                    <h3>Physical Components</h3>
+                    <ul>
+                        <li><strong>Main Server:</strong> Dell PowerEdge R520 (16GB RAM, Xeon E5-407 @ 2.4GHz)</li>
+                        <li><strong>Main PC:</strong> TUF X570-PLUS WIFI (32GB RAM, Ryzen 7 5800X 8 Core 3.8GHz, Radeon RX 7800 XT)</li>
+                        <li><strong>Storage Server:</strong> Custom ZFS with 3 x 4TB, 2 x 1TB, 1 x 2TB, 1 x 16TB drives in ZRAID 2</li>
+                        <li><strong>Network:</strong> Microtik Router, TP-Link TL-SG1024 24 port Gigabit Switch, Netgear Nighthawk Wireless Access Point, Netgear Prosafe GS108 8 port Gigabit Switch</li>
+                        <li><strong>Power:</strong> Startech 8 outlets PDU 125V 15A, surge protectors</li>
+                    </ul>
+
+                    <h3>Software Infrastructure</h3>
+                    <ul>
+                        <li><strong>Hypervisor:</strong> Proxmox VE for virtualization</li>
+                        <li><strong>Containers:</strong> Docker with Portainer and Docker Compose</li>
+                        <li><strong>Storage:</strong> Proxmox ZFS pools, NFS/SMB shares</li>
+                        <li><strong>Networking:</strong> Pi-hole for DNS/ad-blocking, pfSense firewall with IDS/IPS</li>
+                    </ul>
+
+                    <h3>Self-hosted Applications</h3>
+                    <ul>
+                        <li><strong>Media:</strong> Plex, Jellyfin</li>
+                        <li><strong>Home Automation:</strong> Home Assistant</li>
+                        <li><strong>Monitoring:</strong> Grafana, Prometheus, InfluxDB</li>
+                        <li><strong>Documentation:</strong> Wiki.js</li>
+                        <li><strong>Password Management:</strong> Vaultwarden</li>
+                        <li><strong>Git Server:</strong> Gitea</li>
+                    </ul>
+
+                    <h3>Network Topology</h3>
+                    <div class="mermaid">
+                        graph TD
+                            Internet((Internet)) --> Router[pfSense Router]
+                            Router --> CoreSwitch[Core Switch]
+                            CoreSwitch --> Server1[Main Server]
+                            CoreSwitch --> Server2[Storage Server]
+                            CoreSwitch --> Server3[NUC]
+                            CoreSwitch --> AP1[Access Point 1]
+                            CoreSwitch --> AP2[Access Point 2]
+                            CoreSwitch --> RaspPi[Monitoring Pi]
+                            CoreSwitch --> HomeVLAN[Home VLAN]
+                            CoreSwitch --> IoTVLAN[IoT VLAN]
+                            CoreSwitch --> GuestVLAN[Guest VLAN]
+                    </div>
+
+                    <h3>Security Implementation</h3>
+                    <ul>
+                        <li><strong>Network Segmentation:</strong> Multiple VLANs for IoT, guest, and main networks</li>
+                        <li><strong>Intrusion Detection:</strong> Suricata IDS/IPS on pfSense</li>
+                        <li><strong>Traffic Monitoring:</strong> Netflow analysis with ELK stack</li>
+                        <li><strong>Access Control:</strong> Strong authentication with MFA where available</li>
+                    </ul>
+
+                    <h3>Backup Strategy</h3>
+                    <ul>
+                        <li><strong>Local:</strong> Daily incremental backups to NAS</li>
+                        <li><strong>Offsite:</strong> Weekly backups to cloud storage (Backblaze B2)</li>
+                        <li><strong>Configuration:</strong> All network and server configs version controlled</li>
+                        <li><strong>Recovery:</strong> Documented procedures for rebuilding services</li>
+                    </ul>
+
+                    <h3>Future Expansion Plans</h3>
+                    <ul>
+                        <li>Redundant internet connection with automatic failover</li>
+                        <li>Storage capacity expansion with additional drives</li>
+                        <li>Network upgrade to 10Gbe for server interconnects</li>
+                        <li>Dedicated hardware for machine learning projects</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({ startOnLoad: true });
+        
+        // Sidebar toggle for mobile
+        document.getElementById('sidebarToggle').onclick = function() {
+            document.querySelector('.sidebar').classList.toggle('open');
+        };
+    </script>
+</body>
+</html> 
